@@ -24,7 +24,7 @@ cols_with_zero = ['Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI']
 
 for col in cols_with_zero:
     df[col] = df[col].replace(0, np.nan)
-    df[col].fillna(df[col].median(), inplace=True)
+    df[col] = df[col].fillna(df[col].median())
 
 # Define features and target
 X = df.drop('Outcome', axis=1)
