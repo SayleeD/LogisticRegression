@@ -15,7 +15,7 @@ st.write("Enter patient details to predict diabetes outcome")
 # -----------------------------
 # Load Dataset
 # -----------------------------
-df = pd.read_csv("diabetes.csv")
+df = pd.read_csv("diabetes_8.csv")
 
 # -----------------------------
 # Data Preprocessing
@@ -31,7 +31,7 @@ X = df.drop('Outcome', axis=1)
 Y = df['Outcome']
 
 # Train model
-model = LogisticRegression()
+model = LogisticRegression(max_iter=1000)
 model.fit(X, Y)
 
 # -----------------------------
